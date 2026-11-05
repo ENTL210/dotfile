@@ -1,3 +1,12 @@
-/*
-!/.gitignore
-!/nvim/
+# files the operating systems drop into folders on their own
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editor leftovers
+*.swp
+*.swo
+*~
+
+# compiled spell file (Neovim rebuilds it from the .add word list, which stays tracked)
+nvim/spell/*.spl

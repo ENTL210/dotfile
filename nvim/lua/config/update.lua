@@ -1,9 +1,10 @@
 -- Nothing in this config updates by itself. Run :Update (or press "u" on the
--- dashboard) when you want new plugin versions and new language server versions.
+-- dashboard, or <space>U) when you want new plugin, language server and
+-- treesitter parser versions.
 
 local function update_servers()
-  -- make sure mason has been set up (it is loaded together with nvim-lspconfig)
-  pcall(require("lazy").load, { plugins = { "nvim-lspconfig" } })
+  -- make sure mason has been set up (it is loaded together with the LSP plugins)
+  pcall(require("lazy").load, { plugins = { "mason-lspconfig.nvim" } })
   local ok, registry = pcall(require, "mason-registry")
   if not ok then
     return
@@ -34,13 +35,20 @@ local function update_servers()
   end))
 end
 
+local function update_parsers()
+  if vim.fn.exists(":TSUpdate") == 2 and vim.fn.executable("tree-sitter") == 1 then
+    vim.cmd("TSUpdate")
+  end
+end
+
 local M = {}
 
 function M.all()
   update_servers()
+  update_parsers()
   vim.cmd("Lazy update")
 end
 
-vim.api.nvim_create_user_command("Update", M.all, { desc = "Update plugins and language servers" })
+vim.api.nvim_create_user_command("Update", M.all, { desc = "Update plugins, language servers and parsers" })
 
 return M

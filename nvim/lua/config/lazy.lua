@@ -18,10 +18,12 @@ require("lazy").setup({
   install = { colorscheme = { "everforest", "habamax" } },
   checker = { enabled = false },
   change_detection = { notify = false },
+  rocks = { enabled = false }, -- no plugin here needs luarocks, and Windows rarely has it
   performance = {
     rtp = {
+      -- matchit is kept on so % jumps between begin/end in SystemVerilog and LaTeX
       disabled_plugins = {
-        "gzip", "matchit", "netrwPlugin", "rplugin", "tarPlugin", "tohtml", "tutor", "zipPlugin",
+        "gzip", "netrwPlugin", "rplugin", "tarPlugin", "tohtml", "tutor", "zipPlugin",
       },
     },
   },
