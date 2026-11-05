@@ -18,6 +18,9 @@ map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- relative numbers show how far each line is from the cursor (handy for 5j, 3dd)
+map("n", "<leader>ur", function() vim.o.relativenumber = not vim.o.relativenumber end, { desc = "Toggle relative line numbers" })
+
 -- leave terminal mode with two escapes
 map("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 

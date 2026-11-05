@@ -95,6 +95,7 @@ Leader is `Space`. Local leader (LaTeX) is `\`. Press `<space>sk` to search ever
 | `Shift-h` / `Shift-l` | Previous / next buffer (open file) |
 | `<` / `>` in visual mode | Indent and keep the selection |
 | `<space>bd` | Close buffer |
+| `<space>ur` | Toggle relative line numbers |
 | `<space>qq` | Quit all |
 
 ### Finding things

@@ -61,7 +61,7 @@ if vim.g.remote then
 else
   o.undofile = true
   o.cursorline = true
-  o.relativenumber = true
+  o.relativenumber = false -- plain line numbers; <space>ur turns relative numbers on and off
   vim.schedule(function()
     o.clipboard = "unnamedplus"
   end)

@@ -88,6 +88,7 @@ return {
         { "<leader>g", group = "git" },
         { "<leader>s", group = "search" },
         { "<leader>t", group = "terminal" },
+        { "<leader>u", group = "toggle" },
       },
     },
   },
